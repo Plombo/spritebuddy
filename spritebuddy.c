@@ -385,7 +385,11 @@ int main(int argc, char **argv)
     {
         if (needsmask(&img))
         {
-            if (!saveMask(argv[4], &img))
+            if (argc < 5)
+            {
+                fprintf(stderr, "warning: source has non-trivial alpha, but no mask filename given");
+            }
+            else if (!saveMask(argv[4], &img))
             {
                 fprintf(stderr, "error: failed to save alpha mask '%s'\n", argv[4]);
                 goto error;
