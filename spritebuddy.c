@@ -346,8 +346,9 @@ int main(int argc, char **argv)
     {
         fprintf(stderr, "Usage: %s palette source result [result_mask]\n", argv[0]);
         fprintf(stderr, "\n");
-        fprintf(stderr, "palette: an indexed PNG or GIF with the target palette\n");
-        fprintf(stderr, "source: the RGBA PNG to apply the palette to and generate the mask from\n");
+        fprintf(stderr, "palette: an indexed PNG with the target palette\n");
+        fprintf(stderr, "source: the PNG to apply the palette to and generate the mask from;\n"
+                        "        can be RGB, indexed, or grayscale, with or without alpha\n");
         fprintf(stderr, "result: path to which to save the resulting image as an indexed PNG\n");
         fprintf(stderr, "result_mask: path to which to save the resulting alpha mask as a grayscale PNG\n");
         fprintf(stderr, "\n");
